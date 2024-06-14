@@ -2,10 +2,22 @@ image: node:18.14.0
 
 stages:
   - build
+  - sonar
   - deploy
+  - release
+
+include:
+  - project: "plattform/brm/gitlab-pipelines"
+    ref: main
+    file: "snippets/general/workflow.gitlab-ci.yml"
+  - project: "plattform/brm/gitlab-pipelines"
+    ref: main
+    file: "snippets/general/release.gitlab-ci.yml"
+
 
 # run a npm install to check if every dependency works
 build:
+  stage: build
   script:
     - nmp install
   artifacts:
