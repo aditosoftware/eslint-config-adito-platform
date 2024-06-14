@@ -24,7 +24,7 @@ build:
   script:
     - node -v
     - npm -v
-    - nmp install
+    - npm install
   interruptible: true
   artifacts:
     when: always
