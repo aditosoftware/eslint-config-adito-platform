@@ -1,0 +1,50 @@
+image: node:18.14.0
+
+stages:
+  - build
+  - deploy
+
+# run a npm install to check if every dependency works
+build:
+  script:
+    - nmp install
+  artifacts:
+    when: always
+    paths:
+      - index.mjs
+      - README.md
+      - package.json
+      - package-lock.json
+    expire_in: 5 days
+
+# deploys to the current project
+deploy_on_gitlab_project:
+  stage: deploy
+  only:
+    - tags
+  needs:
+    - build
+  dependencies:
+    - build
+  variables:
+    GITLAB_REGISTRY: ${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
+    GITLAB_TOKEN: ${CI_JOB_TOKEN}
+  script:
+    - echo "//${GITLAB_REGISTRY}:_authToken=${GITLAB_TOKEN}" > .npmrc
+    - npm publish --registry=https://${GITLAB_REGISTRY}
+
+# deploys to the general package registry project
+deploy_on_gitlab_general:
+  stage: deploy
+  only:
+    - tags
+  needs:
+    - build
+  dependencies:
+    - build
+  variables:
+    GITLAB_REGISTRY: ${CI_SERVER_HOST}/api/v4/projects/1372/packages/npm/
+    GITLAB_TOKEN: ${CI_JOB_TOKEN}
+  script:
+    - echo "//${GITLAB_REGISTRY}:_authToken=${GITLAB_TOKEN}" > .npmrc
+    - npm publish --registry=https://${GITLAB_REGISTRY}
