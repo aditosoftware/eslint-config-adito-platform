@@ -1,4 +1,4 @@
-image: node:18.14.0
+image: node:18
 
 stages:
   - build
@@ -13,13 +13,19 @@ include:
   - project: "plattform/brm/gitlab-pipelines"
     ref: main
     file: "snippets/general/release.gitlab-ci.yml"
-
+  - project: "plattform/brm/gitlab-pipelines"
+    ref: main
+    file: "snippets/typescript/deploy.gitlab-ci.yml"
 
 # run a npm install to check if every dependency works
 build:
   stage: build
+  image: node:18
   script:
+    - node -v
+    - npm -v
     - nmp install
+  interruptible: true
   artifacts:
     when: always
     paths:
@@ -29,34 +35,20 @@ build:
       - package-lock.json
     expire_in: 5 days
 
-# deploys to the current project
-deploy_on_gitlab_project:
-  stage: deploy
-  only:
-    - tags
+publish_on_nexus:
   needs:
     - build
   dependencies:
     - build
-  variables:
-    GITLAB_REGISTRY: ${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
-    GITLAB_TOKEN: ${CI_JOB_TOKEN}
-  script:
-    - echo "//${GITLAB_REGISTRY}:_authToken=${GITLAB_TOKEN}" > .npmrc
-    - npm publish --registry=https://${GITLAB_REGISTRY}
 
-# deploys to the general package registry project
-deploy_on_gitlab_general:
-  stage: deploy
-  only:
-    - tags
+deploy_on_gitlab_project:
   needs:
     - build
   dependencies:
     - build
-  variables:
-    GITLAB_REGISTRY: ${CI_SERVER_HOST}/api/v4/projects/1372/packages/npm/
-    GITLAB_TOKEN: ${CI_JOB_TOKEN}
-  script:
-    - echo "//${GITLAB_REGISTRY}:_authToken=${GITLAB_TOKEN}" > .npmrc
-    - npm publish --registry=https://${GITLAB_REGISTRY}
+
+deploy_on_gitlab_general:
+  needs:
+    - build
+  dependencies:
+    - build
