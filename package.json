@@ -1,0 +1,14 @@
+{
+  "name": "@aditosoftware/eslint-config-adito-platform",
+  "version": "1.0.0",
+  "description": "eslint configuration for the platform team of ADITO",
+  "main": "index.mjs",
+  "license": "MIT",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-jsdoc": "^48.2.7",
+    "eslint-plugin-tsdoc": "^0.2.17"
+  }
+}
