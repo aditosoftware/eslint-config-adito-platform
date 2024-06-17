@@ -24,6 +24,7 @@ export default [
       "**/build",
       "**/*.js",
       "**/*.mjs",
+      ".vscode-test/**",
     ],
   },
   ...compat.extends(
