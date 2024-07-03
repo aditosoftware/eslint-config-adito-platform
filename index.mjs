@@ -31,7 +31,8 @@ export default [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:jsdoc/recommended-typescript"
+    "plugin:jsdoc/recommended-typescript",
+    "plugin:chai-friendly/recommended"
   ),
   {
     plugins: {
