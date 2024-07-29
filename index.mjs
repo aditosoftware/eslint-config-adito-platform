@@ -32,7 +32,11 @@ export default [
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:jsdoc/recommended-typescript",
-    "plugin:chai-friendly/recommended"
+    "plugin:chai-friendly/recommended",
+    "plugin:chai-expect/recommended",
+    "plugin:deprecation/recommended",
+    // prettier needs to be the last line
+    "plugin:prettier/recommended"
   ),
   {
     plugins: {
