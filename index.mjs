@@ -66,6 +66,8 @@ export default [
     },
 
     rules: {
+      "prettier/prettier": "warn",
+
       "@typescript-eslint/no-floating-promises": "error",
 
       "@typescript-eslint/explicit-function-return-type": [
