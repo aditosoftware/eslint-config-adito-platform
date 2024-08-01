@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
+import stylistic from "@stylistic/eslint-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,6 +42,7 @@ export default [
   {
     plugins: {
       "@typescript-eslint": typescriptEslint,
+      "@stylistic": stylistic,
       tsdoc,
     },
 
@@ -66,6 +68,10 @@ export default [
     },
 
     rules: {
+      // disable original rule in order to have chai-friendly/no-unused-expressions to check it.
+      // this will also check to normal findings found by this disabled rule
+      "@typescript-eslint/no-unused-expressions": "off",
+
       "prettier/prettier": "warn",
 
       "@typescript-eslint/no-floating-promises": "error",
@@ -86,8 +92,7 @@ export default [
           format: ["camelCase", "PascalCase"],
         },
       ],
-
-      "@typescript-eslint/semi": "warn",
+      "@stylistic/semi": "warn",
       curly: "warn",
       eqeqeq: "warn",
       "no-throw-literal": "warn",
