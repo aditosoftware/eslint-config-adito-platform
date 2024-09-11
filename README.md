@@ -2,8 +2,6 @@
 
 This is a shared eslint config for the platform teams of ADITO. It contains rules for code quality and documentation.
 
-[TOC]
-
 ## Usage
 
 1. Install via `npm install --save-dev @aditosoftware/eslint-config-adito-platform`
