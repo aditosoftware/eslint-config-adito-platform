@@ -1,13 +1,13 @@
 {
   "name": "@aditosoftware/eslint-config-adito-platform",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "eslint configuration for the platform team of ADITO",
   "main": "index.mjs",
   "license": "MIT",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.4.0",
-    "@typescript-eslint/parser": "^8.4.0",
-    "@stylistic/eslint-plugin": "^2.7.2",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "@stylistic/eslint-plugin": "^2.8.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-chai-expect": "^3.1.0",
