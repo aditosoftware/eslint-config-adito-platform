@@ -14,6 +14,12 @@ import config from "@aditosoftware/eslint-config-adito-platform";
 export default [...config];
 ```
 
+In order to have the prettier rules working, you need to add the following to your `.prettierrc` file:
+```json
+{
+  "endOfLine": "auto"
+}
+```
 
 ## Notes
 
