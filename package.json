@@ -4,6 +4,10 @@
   "description": "eslint configuration for the platform team of ADITO",
   "main": "index.mjs",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aditosoftware/eslint-config-adito-platform.git"
+  },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
