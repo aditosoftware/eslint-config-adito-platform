@@ -35,7 +35,6 @@ export default [
     "plugin:jsdoc/recommended-typescript",
     "plugin:chai-friendly/recommended",
     "plugin:chai-expect/recommended",
-    "plugin:deprecation/recommended",
     // prettier needs to be the last line
     "plugin:prettier/recommended"
   ),
@@ -73,6 +72,8 @@ export default [
       "@typescript-eslint/no-unused-expressions": "off",
 
       "prettier/prettier": "warn",
+
+      "@typescript-eslint/no-deprecated": "error",
 
       "@typescript-eslint/no-floating-promises": "error",
 

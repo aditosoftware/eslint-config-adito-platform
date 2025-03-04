@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.0
+
+### Changed
+
+- Upgraded dependencies: 
+  - eslint to 9.21.0
+  - @typescript-eslint/eslint-plugin to 8.26.0
+  - @typescript-eslint/parser to 8.26.0
+  - @stylistic/eslint-plugin to 4.2.0
+  - eslint-config-prettier to 10.0.2
+  - eslint-plugin-jsdoc to 50.6.3
+  - eslint-plugin-prettier to 5.2.3
+  - eslint-plugin-tsdoc to 0.4.0
+  - prettier to 3.5.3
+
+### Removed
+
+- Removed dependency "eslint-plugin-deprecation": Those rules are integrated into "typescript-eslint" and therefore not needed
 
 ## 1.0.6
 
