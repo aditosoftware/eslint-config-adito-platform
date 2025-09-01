@@ -5,11 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.1
+
+### Changed
+
+- Upgraded dependencies:
+  - @typescript-eslint/eslint-plugin to 8.41.0
+  - @typescript-eslint/parser to 8.41.0
+  - @stylistic/eslint-plugin to 5.2.3
+  - eslint to 9.34.0
+  - eslint-config-prettier to 10.1.8
+  - eslint-plugin-chai-friendly to 1.1.0
+  - eslint-plugin-jsdoc to 54.1.1
+  - eslint-plugin-prettier to 5.5.4
+  - prettier": "3.6.2"
+
 ## 2.0.0
 
 ### Changed
 
-- Upgraded dependencies: 
+- Upgraded dependencies:
   - eslint to 9.21.0
   - @typescript-eslint/eslint-plugin to 8.26.0
   - @typescript-eslint/parser to 8.26.0
@@ -28,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Upgraded dependencies: 
+- Upgraded dependencies:
   - @typescript-eslint/eslint-plugin to 8.5.0
   - @typescript-eslint/parser to 8.5.0
   - @stylistic/eslint-plugin to 2.8.0
@@ -37,7 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Upgraded dependencies: 
+- Upgraded dependencies:
   - @typescript-eslint/eslint-plugin to 8.4.0
   - @typescript-eslint/parser to 8.4.0
   - @stylistic/eslint-plugin to 2.7.2
@@ -47,7 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Upgraded dependencies: 
+- Upgraded dependencies:
   - @typescript-eslint/eslint-plugin to 8.0.0
   - @typescript-eslint/parser to 8.0.0
   - @stylistic/eslint-plugin to 2.6.0
@@ -59,15 +74,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Reduced the level for prettier from `error` to `warn` 
+- Reduced the level for prettier from `error` to `warn`
 
 ## 1.0.2
 
 ### Added
 
-- Added `eslint-config-prettier` and its recommended configuration 
-- Added `eslint-plugin-chai-expect` and its recommended configuration 
-- Added `eslint-plugin-deprecation` and its recommended configuration 
+- Added `eslint-config-prettier` and its recommended configuration
+- Added `eslint-plugin-chai-expect` and its recommended configuration
+- Added `eslint-plugin-deprecation` and its recommended configuration
 - Added `eslint-plugin-prettier` and its recommended configuration. **Note:**
   You need to add the following to your `.prettierrc` file in order to have you eslint rule work as intended:
 
@@ -75,13 +90,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   {
     "endOfLine": "auto"
   }
-  ```  
+  ```
 
-## 1.0.1 
+## 1.0.1
 
 ### Added
 
-- Added `eslint-plugin-chai-friendly` and its recommended configuration 
+- Added `eslint-plugin-chai-friendly` and its recommended configuration
 
 ## 1.0.0
 
