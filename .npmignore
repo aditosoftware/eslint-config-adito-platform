@@ -1,0 +1,4 @@
+# ignore github folder 
+.github
+# ignore any locally packaged files
+*.tgz

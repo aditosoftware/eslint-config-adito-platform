@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.3
+
+### Added
+
+- added npmignore to not publish the github folder
+
+
+
 ## 2.0.2
 
 ### Changed
@@ -28,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - eslint-plugin-chai-friendly to 1.1.0
   - eslint-plugin-jsdoc to 54.1.1
   - eslint-plugin-prettier to 5.5.4
-  - prettier": "3.6.2"
+  - prettier to 3.6.2
 
 ## 2.0.0
 
