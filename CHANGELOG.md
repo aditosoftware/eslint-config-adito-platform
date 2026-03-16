@@ -11,7 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - added npmignore to not publish the github folder
 
+### Changed
 
+- Upgraded dependencies:
+  - @typescript-eslint/eslint-plugin to 8.57.0
+  - @typescript-eslint/parser to 8.57.0
+  - @stylistic/eslint-plugin to 5.10.0
+  - eslint-plugin-chai-expect to 4.0.0
+  - eslint-plugin-jsdoc to 62.8.0
+  - eslint-plugin-prettier to 5.5.5
+  - eslint-plugin-tsdoc to 0.5.2
 
 ## 2.0.2
 
