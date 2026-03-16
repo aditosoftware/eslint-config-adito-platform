@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.3
+
+### Added
+
+- added npmignore to not publish the github folder
+
+### Changed
+
+- Upgraded dependencies:
+  - @typescript-eslint/eslint-plugin to 8.57.0
+  - @typescript-eslint/parser to 8.57.0
+  - @stylistic/eslint-plugin to 5.10.0
+  - eslint-plugin-chai-expect to 4.0.0
+  - eslint-plugin-jsdoc to 62.8.0
+  - eslint-plugin-prettier to 5.5.5
+  - eslint-plugin-tsdoc to 0.5.2
+
 ## 2.0.2
 
 ### Changed
@@ -28,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - eslint-plugin-chai-friendly to 1.1.0
   - eslint-plugin-jsdoc to 54.1.1
   - eslint-plugin-prettier to 5.5.4
-  - prettier": "3.6.2"
+  - prettier to 3.6.2
 
 ## 2.0.0
 
