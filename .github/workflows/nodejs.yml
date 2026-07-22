@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [22.x, 24.x, 26.x]
     steps:
       - uses: actions/checkout@v7.0.0
       - name: Set up Node.js
@@ -20,6 +20,6 @@ jobs:
 
       - name: Check npm versions
         run: npm -v
-        
+
       - name: Run clean install
         run: npm ci
