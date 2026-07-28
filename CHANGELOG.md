@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.4
+
+### Changed
+
+- ci: used npm 11 for publishing with OIDC and used only supported node versions for pipelines by @rH4rtinger in #34
+
+
+- Upgraded dependencies:
+  - chore(deps): bump flatted from 3.4.1 to 3.4.2 by @dependabot[bot] in #20
+  - chore(deps): bump picomatch from 4.0.3 to 4.0.4 by @dependabot[bot] in #21
+  - chore(deps): bump brace-expansion from 1.1.12 to 1.1.13 by @dependabot[bot] in #22
+  - chore(deps): bump actions/setup-node from 6 to 6.3.0 by @dependabot[bot] in #23
+  - chore(deps): bump actions/setup-node from 6.3.0 to 6.4.0 by @dependabot[bot] in #24
+  - chore(deps): bump fast-uri from 3.1.0 to 3.1.2 by @dependabot[bot] in #25
+  - chore(deps): bump brace-expansion from 5.0.5 to 5.0.6 by @dependabot[bot] in #26
+  - chore(deps): bump actions/checkout from 6 to 6.0.2 by @dependabot[bot] in #27
+  - chore(deps): bump actions/checkout from 6.0.2 to 6.0.3 by @dependabot[bot] in #28
+  - chore(deps): bump js-yaml from 4.1.1 to 4.2.0 by @dependabot[bot] in #29
+  - chore(deps): bump actions/checkout from 6.0.3 to 7.0.0 by @dependabot[bot] in #30
+  - chore(deps): bump actions/setup-node from 6.4.0 to 7.0.0 by @dependabot[bot] in #31
+  - chore(deps): bump brace-expansion from 1.1.14 to 1.1.16 by @dependabot[bot] in #33
+  - chore(deps): bump js-yaml from 4.2.0 to 4.3.0 by @dependabot[bot] in #32
+  - chore(deps): bump fast-uri from 3.1.2 to 3.1.4 by @dependabot[bot] in #35
+  - chore(deps): bump actions/checkout from 7.0.0 to 7.0.1 by @dependabot[bot] in #36
+  - chore(deps): bump brace-expansion and eslint by @dependabot[bot] in #37
+
 ## 2.0.3
 
 ### Added
