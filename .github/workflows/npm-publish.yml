@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - name: Validate ESLint config
+        run: npm run validate
 
   publish-npm:
     needs: build

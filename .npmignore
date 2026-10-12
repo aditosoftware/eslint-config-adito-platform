@@ -2,3 +2,5 @@
 .github
 # ignore any locally packaged files
 *.tgz
+# ignore the validation fixture
+test

@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/aditosoftware/eslint-config-adito-platform.git"
   },
+  "scripts": {
+    "validate": "node test/validate.mjs"
+  },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.57.0",
     "@typescript-eslint/parser": "^8.57.0",
