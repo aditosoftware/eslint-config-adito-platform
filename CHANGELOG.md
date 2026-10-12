@@ -5,12 +5,57 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.0
+
+### Added
+
+- Added `eslint-plugin-unicorn` for more rule checks
+- `jsdoc/require-jsdoc` now requires a TSDoc block above every test method call: `suite`/`suiteSetup`/`suiteTeardown`/`test`/`setup`/`teardown`
+- Enabled `@stylistic` rules (`warn`): `semi`, `eol-last`,
+  `lines-between-class-members`, `no-multi-spaces`,
+  `no-multiple-empty-lines`, `lines-around-comment`, `line-comment-position`. None of those rules conflicts with prettier formatting
+
+### Changed
+
+- Also validated that types and interfaces will get TSDoc comments
+- Bumped peer dependencies:
+  - eslint to 10.12.0
+  - eslint-plugin-jsdoc to 65.3.0
+- `jsdoc/require-jsdoc` only requires JSDoc for type properties (interface
+  members, named type members) outside of function parameters: one-off inline
+  parameter shapes (`function f(x: { a: string })`) no longer require docs,
+  interfaces and named types still do
+- `unicorn/no-non-function-verb-prefix` only checks the `get`, `set` and `is`
+  prefixes (configured via the rule's `verbs` option); the default verb list
+  (`unset`, `delete`, `add`, `remove`, `destroy`, `create`) is no longer enforced
+- Disabled `jsdoc/require-throws-type`: the required `@throws {Type}` brace
+  syntax is JSDoc-only — the TSDoc parser rejects it (malformed inline tag)
+  and it renders poorly in the IDE hover. Throws are documented as `` `Type` ``
+  or `{@link Type}` instead
+- Disabled `unicorn/prefer-iterator-to-array`: the suggested
+  `Iterator#toArray()` is ES2025 (iterator helpers) and not available with the
+  projects' ES2022/ES2023 target/lib
+- `unicorn/filename-case` now ignores directory names: only the filename itself is checked against the allowed cases
+- Disabled `unicorn/no-unsafe-property-key`: false positive for the required
+  Immer idiom `[immerable] = true` (and for `keyof` access on such classes) —
+  the rule's unique-symbol detection checks `TypeFlags.UniqueESSymbol`
+  (16384), but TypeScript reports the type of a unique symbol expression as
+  `ESSymbolLiteral` (8192), so the guard never matches; TS itself already
+  checks the key types
+- Allowed `unicorn/no-top-level-assignment-in-function` in
+  `**/extension.ts`: the extension entry point keeps module-level state that
+  is assigned during `activate()` and by the exported test setters (the rule
+  has no options)
+- Typed linting now uses `parserOptions.projectService: true` instead of the
+  legacy `project: true` auto-discovery option: same behavior (each file's
+  `tsconfig.json` is auto-detected) but with better caching and project-
+  reference support
+
 ## 2.0.4
 
 ### Changed
 
 - ci: used npm 11 for publishing with OIDC and used only supported node versions for pipelines by @rH4rtinger in #34
-
 
 - Upgraded dependencies:
   - chore(deps): bump flatted from 3.4.1 to 3.4.2 by @dependabot[bot] in #20
@@ -53,10 +98,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Upgraded dependencies:
- - @typescript-eslint/eslint-plugin to 8.46.1
- - @typescript-eslint/parser to 8.46.1
- - @stylistic/eslint-plugin to 5.4.0
- - eslint-plugin-jsdoc to 60.8.3
+- @typescript-eslint/eslint-plugin to 8.46.1
+- @typescript-eslint/parser to 8.46.1
+- @stylistic/eslint-plugin to 5.4.0
+- eslint-plugin-jsdoc to 60.8.3
 
 ## 2.0.1
 
