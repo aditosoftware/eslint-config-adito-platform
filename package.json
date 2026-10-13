@@ -1,6 +1,6 @@
 {
   "name": "@aditosoftware/eslint-config-adito-platform",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "eslint configuration for the platform team of ADITO",
   "main": "index.mjs",
   "license": "MIT",
