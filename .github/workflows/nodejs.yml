@@ -23,3 +23,6 @@ jobs:
 
       - name: Run clean install
         run: npm ci
+
+      - name: Validate ESLint config
+        run: npm run validate
