@@ -4,3 +4,5 @@
 *.tgz
 # ignore the validation fixture
 test
+# Ignore any agents file
+AGENTS.md

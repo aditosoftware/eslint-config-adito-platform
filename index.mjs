@@ -241,7 +241,40 @@ export default [
       ],
       curly: "warn",
       eqeqeq: "warn",
-      "no-throw-literal": "warn",
+      // each module may only be imported once (merge the specifiers instead)
+      "no-duplicate-imports": "warn",
+      // forgotten debug logging; warn/error are legitimate API error channels
+      "no-console": [
+        "warn",
+        {
+          allow: ["warn", "error"],
+        },
+      ],
+      // forgotten debugging dialogs (alert/confirm/prompt)
+      "no-alert": "warn",
+      // `"${x}"` in a plain string is almost always a missing template literal
+      "no-template-curly-in-string": "warn",
+      // `x === x` is almost always a typo for `x === y`
+      "no-self-compare": "warn",
+      // the executor must call resolve/reject, returning a value is a mistake
+      "no-promise-executor-return": "warn",
+      // a `return` in a constructor has no effect
+      "no-constructor-return": "warn",
+      // line continuations with `\` are error-prone; use template literals
+      "no-multi-str": "warn",
+      // `new String("x")` etc. instead of the primitive literal is a mistake
+      "no-new-wrappers": "warn",
+      // `!!x`, `+x`, `"" + x` are hard to read; use Boolean(), Number(), String()
+      "no-implicit-coercion": "warn",
+      // `default` must be the last case in a switch
+      "default-case-last": "warn",
+      // `return` makes `else` redundant and harder to read
+      "no-else-return": "warn",
+      // `{ x: x }` can be shortened to `{ x }`
+      "object-shorthand": "warn",
+      // the TS rule understands thrown class references (e.g. `new Error()`),
+      // which the core rule `no-throw-literal` cannot
+      "@typescript-eslint/only-throw-error": "warn",
       "tsdoc/syntax": "warn",
 
       "jsdoc/tag-lines": [
