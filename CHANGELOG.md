@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Added
+
+- Enabled `no-duplicate-imports` (`warn`): each module may only be imported once, duplicated imports of the same module must be merged into a single import statement
+- Enabled core rules (`warn`):
+  - `no-console` (with `allow: ["warn", "error"]`): catches forgotten debug logging, while `console.warn`/`console.error` stay legitimate
+  - `no-alert`: catches forgotten debugging dialogs
+  - `no-template-curly-in-string`: catches `"${x}"` inside plain strings (missing template literal)
+  - `no-self-compare`: catches `x === x`, which is almost always a typo
+  - `no-promise-executor-return`: the promise executor must call `resolve`/`reject`, returning a value is a mistake
+  - `no-constructor-return`: a `return` in a constructor has no effect
+  - `no-multi-str`: line continuations with `\` are error-prone, template literals should be used instead
+  - `no-new-wrappers`: `new String("x")` etc. instead of the primitive literal is a mistake
+  - `no-implicit-coercion`: forces readable conversions like `Boolean(x)`, `Number(x)`, `String(x)` instead of `!!x`, `+x`, `"" + x`
+  - `default-case-last`: the `default` clause must be the last case in a switch
+  - `no-else-return`: a `return` makes a following `else` redundant
+  - `object-shorthand`: `{ x: x }` can be shortened to `{ x }`
+
+### Changed
+
+- Replaced the core rule `no-throw-literal` with `@typescript-eslint/only-throw-error` (`warn`): the TypeScript rule understands thrown class references (e.g. `new Error()`), which the core rule cannot
+
 ## 2.1.0
 
 ### Added
